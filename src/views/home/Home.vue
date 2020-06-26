@@ -59,39 +59,39 @@
             }
         },
         created() {
-            this.getHomeData()
-
-            this.getHomeGoodsData('pop')
-            this.getHomeGoodsData('new')
-            this.getHomeGoodsData('sell')
+            // this.getHomeData();
+            //
+            // this.getHomeGoodsData('pop');
+            // this.getHomeGoodsData('new');
+            // this.getHomeGoodsData('sell');
         },
         methods:{
             pTabClick(index) {
                 switch (index) {
                   case 0:
-                      this.currentType = 'pop'
-                      break
+                      this.currentType = 'pop';
+                      break;
                   case 1:
-                      this.currentType = 'new'
-                      break
+                      this.currentType = 'new';
+                      break;
                   case 2:
-                      this.currentType = 'sell'
+                      this.currentType = 'sell';
                       break
               }
             },
-            getHomeData() {
-                getHomeMultiData().then(res => {
-                    this.banners = res.data.banners
-                    this.products = res.data.products
-                })
-            },
-            getHomeGoodsData(type) {
-                let page = this.goods[type].page + 1
-                getGoodsData(type, page).then(res => {
-                    this.goods[type].list.push(...res.goods)
-                    this.goods[type].page = res.page
-                })
-            },
+            // getHomeData() {
+            //     getHomeMultiData().then(res => {
+            //         this.banners = res.data.banners;
+            //         this.products = res.data.products
+            //     })
+            // },
+            // getHomeGoodsData(type) {
+            //     let page = this.goods[type].page + 1;
+            //     getGoodsData(type, page).then(res => {
+            //         this.goods[type].list.push(...res.goods);
+            //         this.goods[type].page = res.page
+            //     })
+            // },
             backTopClick() {
                 // 通过$refs拿到组件中的对象
                 this.$refs.scroller.scrollTo(0, 0, 500)

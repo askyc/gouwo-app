@@ -4,14 +4,14 @@
       <h2>Login</h2>
       <form>
         <div class="user-box">
-          <input type="text" name required />
-          <label>Username</label>
+          <input name="account" v-model="loginForm.account" type="text" required/>
+          <label>账号</label>
         </div>
         <div class="user-box">
-          <input type="password" name required />
-          <label>Password</label>
+          <input name="password" v-model="loginForm.password" type="password" required/>
+          <label>密码</label>
         </div>
-        <a href="#">
+        <a href="#" @click="login">
           <span></span>
           <span></span>
           <span></span>
@@ -24,8 +24,44 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex';
+
+  import {login} from "api/login";
+
+  export default {
+    name: "Login",
+    components: {},
+    data() {
+      return {
+        loginForm: {
+          username: '',
+          password: ''
+        }
+      }
+    },
+    methods: {
+      ...mapMutations(['changeToken']),
+      login() {
+        let _this = this;
+        if (this.loginForm.account === '' || this.loginForm.password === '') {
+          alert('账号或密码不能为空');
+        } else {
+          let model = {account: this.loginForm.account, password: this.loginForm.password};
+          login(model).then(res => {
+            _this.userToken = 'Bearer ' + res.data;
+            // 将用户token保存到vuex中
+            _this.changeToken({Authorization: this.userToken});
+            _this.$router.push('/home');
+          }).catch(error => {
+            console.log(error);
+            _this.$router.push('/404');
+          });
+        }
+      },
+    }
+  }
 </script>
 
 <style scoped>
-@import "../../styles/login.css";
+  @import "../../styles/login.css";
 </style>
