@@ -39,6 +39,10 @@
         }
       }
     },
+    beforeCreate() {
+      // 登录界面隐藏mainTarBar
+      this.$store.commit("setMainTarBarShow", false)
+    },
     methods: {
       ...mapMutations(['changeToken']),
       login() {

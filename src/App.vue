@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <main-tar-bar></main-tar-bar>
+    <keep-alive exclude="ArticlDetail">
+      <router-view />
+    </keep-alive>
+    <!-- 控制MainTarBar示和隐藏 -->
+    <main-tar-bar v-show="$store.getters.mainTarBarShow" />
   </div>
 </template>
 
