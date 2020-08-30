@@ -1,10 +1,10 @@
 <template>
-  <h2>品类</h2>
+    <h2>聊天</h2>
 </template>
 
 <script>
     export default {
-        name: "Category"
+        name: "Chat"
     }
 </script>
 

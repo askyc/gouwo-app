@@ -19,14 +19,14 @@ const routes = [
     component: () => import('../views/home/Home.vue')
   },
   {
-    path: '/category',
-    name: 'Category',
-    component: () => import('../views/category/Category.vue')
+    path: '/nearby',
+    name: 'Nearby',
+    component: () => import('../views/nearby/Nearby.vue')
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: () => import('../views/cart/Cart.vue')
+    path: '/chat',
+    name: 'Chat',
+    component: () => import('../views/chat/Chat.vue')
   },
   {
     path: '/me',

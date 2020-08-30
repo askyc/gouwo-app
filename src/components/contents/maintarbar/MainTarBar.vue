@@ -1,21 +1,21 @@
 <template>
   <tar-bar>
     <tar-bar-item path="/home" >
-      <!--dom 中使用路径需要用 ~ 来识别配置的别名-->
       <img slot="item-icon" src="~assets/images/tentative/shouye.svg" alt="">
       <img slot="item-icon-active" src="~assets/images/tentative/shouye.svg" alt="">
       <div slot="item-text">首页</div>
     </tar-bar-item>
-    <tar-bar-item path="/category">
+    <tar-bar-item path="/chat">
       <img slot="item-icon" src="~assets/images/tentative/liaotian.svg" alt="">
       <img slot="item-icon-active" src="~assets/images/tentative/liaotian.svg" alt="">
       <div slot="item-text">与聊</div>
     </tar-bar-item>
-    <tar-bar-item path="/cart">
+    <tar-bar-item path="/">
       <img slot="item-icon" src="~assets/images/tentative/tianjia.svg" alt="">
       <img slot="item-icon-active" src="~assets/images/tentative/tianjia.svg" alt="">
+      <div slot="item-text"></div>
     </tar-bar-item>
-    <tar-bar-item path="/cart">
+    <tar-bar-item path="/nearby">
       <img slot="item-icon" src="~assets/images/tentative/dingwei.svg" alt="">
       <img slot="item-icon-active" src="~assets/images/tentative/dingwei.svg" alt="">
       <div slot="item-text">附近</div>
