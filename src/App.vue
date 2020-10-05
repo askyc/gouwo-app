@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import MainTarBar from 'components/contents/maintarbar/MainTarBar'
+  import MainTarBar from 'components/maintarbar/MainTarBar'
   export default {
     name: 'app',
     components: {
